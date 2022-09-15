@@ -105,7 +105,8 @@ final class RepositoriesViewController: UIViewController, BindableType {
         let input = RepositoriesViewModel.Input(
 //            loadTrigger: Just(()).eraseToAnyPublisher(),
             searchTextTrigger: searchTextTrigger
-                .debounce(for: 0.3, scheduler: RunLoop.main)
+                .debounce(for: 0.3, scheduler: DispatchQueue.global(qos: .background))
+                .removeDuplicates()
                 .filter({ text in
                     !text.isEmpty
                 })
@@ -116,9 +117,11 @@ final class RepositoriesViewController: UIViewController, BindableType {
         let output = viewModel.transform(input)
         
         output.$repos
+            .receive(on: RunLoop.main)
             .subscribe(reposSubscriber)
         
         output.$isLoading
+            .receive(on: RunLoop.main)
             .subscribe(loadingSubscriber)
         
         output.$error
@@ -135,18 +138,14 @@ extension RepositoriesViewController {
             snapshot.appendSections([.main])
             snapshot.appendItems(repos, toSection: .main)
             vc.dataSource.apply(snapshot, animatingDifferences: true, completion: nil)
-            DispatchQueue.main.async {
-                vc.tableView.isHidden = repos.isEmpty
-            }
+            vc.tableView.isHidden = repos.isEmpty
         }
     }
     
     private var loadingSubscriber: Binder<Bool> {
         Binder(self) { vc, isLoading in
-            DispatchQueue.main.async {
-                vc.activityIndicator.isHidden = !isLoading
-                vc.searchController.searchBar.isUserInteractionEnabled = !isLoading
-            }
+            vc.activityIndicator.isHidden = !isLoading
+            vc.searchController.searchBar.isUserInteractionEnabled = !isLoading
         }
     }
     
