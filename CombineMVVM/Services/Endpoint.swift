@@ -9,11 +9,14 @@ enum Endpoint {
     static let BASE_URL = "https://api.github.com/"
     
     case searchRepos
+    case fetchRepo(path: String)
     
     func path() -> String {
         switch self {
         case .searchRepos:
             return "search/repositories"
+        case .fetchRepo(let path):
+            return "repos/\(path)"
         }
     }
 }

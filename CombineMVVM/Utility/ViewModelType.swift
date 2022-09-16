@@ -15,3 +15,9 @@ protocol ViewModelType {
     
     func transform(_ input: Input) -> Output
 }
+
+extension ViewModelType {
+    func logDeinit() -> Void {
+        print(String(describing: type(of: self)) + " deinit")
+    }
+}

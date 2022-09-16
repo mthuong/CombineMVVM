@@ -125,6 +125,7 @@ final class RepositoriesViewController: UIViewController, BindableType {
             .subscribe(loadingSubscriber)
         
         output.$error
+            .receive(on: RunLoop.main)
             .subscribe(errorSubscriber)
     }
     
@@ -160,7 +161,8 @@ extension RepositoriesViewController {
 // MARK: UITableViewDelegate
 extension RepositoriesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        viewModel.goToDetail(indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -175,7 +177,7 @@ extension RepositoriesViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchTextTrigger.send("")
+//        searchTextTrigger.send("")
     }
 }
 

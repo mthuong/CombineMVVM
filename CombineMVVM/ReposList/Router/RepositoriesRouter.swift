@@ -13,7 +13,7 @@ protocol RepositoriesRouterType {
 }
 
 struct RepositoriesRouter: RepositoriesRouterType {
-    let navController: UINavigationController
+    weak var navController: UINavigationController?
     
     static func createModule() -> UINavigationController {
         let navController = UINavigationController()
@@ -27,6 +27,9 @@ struct RepositoriesRouter: RepositoriesRouterType {
     }
     
     func toRepoDetail(repo: Repo) {
-        // TODO: Implement navigate to repo detail
+        // Implement navigate to repo detail
+        guard let fullName = repo.fullName else { return }
+        let vc = RepoDetailRouter.createModule(fullName)
+        navController?.pushViewController(vc, animated: true)
     }
 }

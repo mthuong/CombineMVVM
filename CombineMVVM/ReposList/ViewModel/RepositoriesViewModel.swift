@@ -29,9 +29,15 @@ class RepositoriesViewModel: ViewModelType {
     private let router: RepositoriesRouterType
     private let useCase: RepositoriesUseCaseType
     internal var subscriptions: Set<AnyCancellable> = Set()
+    private(set) var output: Output!
+    
+    deinit {
+        logDeinit()
+    }
     
     func transform(_ input: Input) -> Output {
         let output = Output()
+        self.output = output
         let errorTracker = ErrorTracker()
         let activityTracker = ActivityTracker(false)
         
@@ -79,5 +85,13 @@ class RepositoriesViewModel: ViewModelType {
             .store(in: &subscriptions)
         
         return output
+    }
+}
+
+// MARK: - Navigator
+extension RepositoriesViewModel {
+    func goToDetail(_ indexPath: IndexPath) -> Void {
+        let repo = output.repos[indexPath.row]
+        router.toRepoDetail(repo: repo)
     }
 }

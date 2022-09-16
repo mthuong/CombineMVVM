@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0318EE9428D42BB400228175 /* RepoDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0318EE9328D42BB400228175 /* RepoDetailRepository.swift */; };
+		0318EE9628D42DE900228175 /* RepoDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0318EE9528D42DE900228175 /* RepoDetailUseCase.swift */; };
+		0318EE9B28D42ED000228175 /* RepoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0318EE9A28D42ED000228175 /* RepoDetailViewModel.swift */; };
+		0318EE9D28D42F1F00228175 /* RepoDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0318EE9C28D42F1F00228175 /* RepoDetailRouter.swift */; };
+		0318EE9F28D439E200228175 /* RepoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0318EE9E28D439E200228175 /* RepoDetailViewController.swift */; };
+		0318EEA128D4559500228175 /* RouterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0318EEA028D4559500228175 /* RouterType.swift */; };
 		034A8FBC28D2C43F009EFDE7 /* UITextField+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A8FBB28D2C43F009EFDE7 /* UITextField+Publisher.swift */; };
 		034A8FC228D2D23E009EFDE7 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A8FC128D2D23E009EFDE7 /* API.swift */; };
 		034A8FF828D2FED8009EFDE7 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A8FF728D2FED8009EFDE7 /* BindableType.swift */; };
@@ -59,6 +65,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0318EE9328D42BB400228175 /* RepoDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailRepository.swift; sourceTree = "<group>"; };
+		0318EE9528D42DE900228175 /* RepoDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailUseCase.swift; sourceTree = "<group>"; };
+		0318EE9A28D42ED000228175 /* RepoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailViewModel.swift; sourceTree = "<group>"; };
+		0318EE9C28D42F1F00228175 /* RepoDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailRouter.swift; sourceTree = "<group>"; };
+		0318EE9E28D439E200228175 /* RepoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailViewController.swift; sourceTree = "<group>"; };
+		0318EEA028D4559500228175 /* RouterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterType.swift; sourceTree = "<group>"; };
 		034A8FB828D2BEE4009EFDE7 /* Combine.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Combine.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		034A8FBB28D2C43F009EFDE7 /* UITextField+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Publisher.swift"; sourceTree = "<group>"; };
 		034A8FC128D2D23E009EFDE7 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -123,6 +135,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0318EE9028D4165300228175 /* RepoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				0318EE9928D42EC200228175 /* Router */,
+				0318EE9828D42EBD00228175 /* View */,
+				0318EE9728D42EB500228175 /* ViewModel */,
+				0318EE9228D42B9700228175 /* Repository */,
+				0318EE9128D417C500228175 /* UseCase */,
+			);
+			path = RepoDetail;
+			sourceTree = "<group>";
+		};
+		0318EE9128D417C500228175 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				0318EE9528D42DE900228175 /* RepoDetailUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		0318EE9228D42B9700228175 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				0318EE9328D42BB400228175 /* RepoDetailRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		0318EE9728D42EB500228175 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0318EE9A28D42ED000228175 /* RepoDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0318EE9828D42EBD00228175 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0318EE9E28D439E200228175 /* RepoDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0318EE9928D42EC200228175 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				0318EE9C28D42F1F00228175 /* RepoDetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		034A8FB928D2C426009EFDE7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				034A8FF728D2FED8009EFDE7 /* BindableType.swift */,
+				0318EEA028D4559500228175 /* RouterType.swift */,
 				034A8FF928D2FEE8009EFDE7 /* ViewModelType.swift */,
 				034A8FFB28D2FF00009EFDE7 /* Binder.swift */,
 				034A8FFD28D2FF1E009EFDE7 /* Reusable.swift */,
@@ -262,6 +327,7 @@
 				034ABBD828D1E688007C1C67 /* AppDelegate.swift */,
 				034ABBDA28D1E688007C1C67 /* SceneDelegate.swift */,
 				034ABBDC28D1E688007C1C67 /* ViewController.swift */,
+				0318EE9028D4165300228175 /* RepoDetail */,
 				034A901028D30231009EFDE7 /* ReposList */,
 				034A8FF628D2FEC1009EFDE7 /* Utility */,
 				034A8FC028D2D234009EFDE7 /* Services */,
@@ -441,16 +507,22 @@
 			files = (
 				034A8FBC28D2C43F009EFDE7 /* UITextField+Publisher.swift in Sources */,
 				034A902328D3034F009EFDE7 /* RepoRepository.swift in Sources */,
+				0318EEA128D4559500228175 /* RouterType.swift in Sources */,
 				034ABBDD28D1E688007C1C67 /* ViewController.swift in Sources */,
 				034A901C28D302AF009EFDE7 /* RepositoriesRouter.swift in Sources */,
+				0318EE9428D42BB400228175 /* RepoDetailRepository.swift in Sources */,
 				034ABBD928D1E688007C1C67 /* AppDelegate.swift in Sources */,
 				034A8FFE28D2FF1E009EFDE7 /* Reusable.swift in Sources */,
 				034A902028D302D5009EFDE7 /* Repo.swift in Sources */,
+				0318EE9628D42DE900228175 /* RepoDetailUseCase.swift in Sources */,
 				034A901328D30275009EFDE7 /* RepositoriesViewController.swift in Sources */,
 				034A8FFC28D2FF00009EFDE7 /* Binder.swift in Sources */,
+				0318EE9B28D42ED000228175 /* RepoDetailViewModel.swift in Sources */,
 				034A8FC228D2D23E009EFDE7 /* API.swift in Sources */,
 				034A8FF828D2FED8009EFDE7 /* BindableType.swift in Sources */,
 				034A901628D3028B009EFDE7 /* RepositoriesViewModel.swift in Sources */,
+				0318EE9F28D439E200228175 /* RepoDetailViewController.swift in Sources */,
+				0318EE9D28D42F1F00228175 /* RepoDetailRouter.swift in Sources */,
 				034A901928D3029B009EFDE7 /* RepositoriesUseCase.swift in Sources */,
 				034A900628D2FF9C009EFDE7 /* Publisher+ErrorTracker.swift in Sources */,
 				034A900A28D30045009EFDE7 /* APIError.swift in Sources */,
